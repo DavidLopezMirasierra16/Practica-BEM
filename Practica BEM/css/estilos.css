@@ -1,0 +1,671 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oxygen:wght@300;400;700&display=swap');
+
+*,
+*::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} 
+
+:root{
+    --principal-azul: rgb(0, 128, 255);
+    --principal-blanco: white;
+    --principal-negro: black;
+    --secundario-naranja: rgb(255, 187, 0);
+    --secundario-verde: rgb(25, 187, 79);
+    --letra-cuerpo: "Oxygen", sans-serif;
+    --letra-titular: "Fira Sans", sans-serif;
+    --relleno-enlaces: 10px;
+}
+
+body{
+    /*width: 80%;
+    margin: auto;*/
+    font-family: var(--letra-cuerpo);
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "logo cesta"
+    "nav nav"
+    ;
+    align-items: center;
+}
+
+.header__logo{
+    grid-area: logo;
+    text-align: right;
+}
+
+.header__cesta{
+    grid-area: cesta;
+}
+
+.nav{
+    /*grid-column: 1/3;
+    grid-row: 2/3;*/
+    grid-area: nav;
+}
+
+.nav__link{
+    background-color: var(--principal-negro);
+    color: var(--principal-blanco);
+    padding: var(--relleno-enlaces);
+    display: block;
+}
+
+.nav__link:hover, .nav__link--activo{
+    background-color: var(--principal-azul);
+    color: var(--principal-negro);
+}
+
+.cesta{
+    font-size: 20px;
+    color: var(--principal-negro);
+}
+
+/*-------------------------------BANNER-------------------------------s*/
+
+.banner{
+    position: relative;
+}
+
+.banner__descripcion{
+    display: none;
+    width: 90%;
+    top: 10%;
+    left: 10%;
+    position: absolute;
+}
+
+.banner__btn:hover{
+    background-color: var(--principal-azul);
+}
+
+/*-------------------------------SERVICIOS-------------------------------*/
+
+.servicios{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "servicios"
+    "caja1"
+    "caja2"
+    "caja3"
+    "caja4"
+    ;
+
+}
+
+.servicios__a{
+    color: var(--principal-blanco);
+}
+
+.servicios__titulo{
+    grid-area: servicios;
+    text-align: center;
+}
+
+.servicios__caja1{
+    grid-area: caja1;
+    padding: 5%;
+}
+
+.servicios__caja2{
+    grid-area: caja2;
+    padding: 5%;
+}
+
+.servicios__caja3{
+    grid-area: caja3;
+    padding: 5%;
+}
+
+.servicios__caja4{
+    grid-area: caja4;
+    padding: 5%;
+}
+
+.servicios__caja1__img, .servicios__caja2__img, .servicios__caja3__img, .servicios__caja4__img{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.servicios__caja1__a, .servicios__caja2__a, .servicios__caja3__a, .servicios__caja4__a{
+    background-color: black;
+    padding: var(--relleno-enlaces);
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+}
+
+.servicios__caja1__a:hover, .servicios__caja2__a:hover, .servicios__caja3__a:hover, .servicios__caja4__a:hover{
+    background-color: var(--principal-azul);
+}
+
+/*-------------------------------EMPRESA-------------------------------*/
+
+.empresa{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "titulo"
+    "empresa_1"
+    "empresa_2"
+    ;
+}
+
+.empresa_titulo{
+    grid-area: titulo;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+.empresa_1{
+    grid-area: empresa_1;
+    margin: auto;
+}
+
+.empresa_2{
+    display: grid;
+    grid-area: empresa_2;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "img1"
+    "p1"
+    "img2"
+    "p2"
+    ;
+    width: 90%;
+    margin: auto;
+    margin-top: 3%;
+    text-align: left;
+    justify-items: center;
+}
+
+
+.empresa_2_img1{
+    grid-area: img1;
+}
+
+.empresa_2_p1{
+    grid-area: p1;
+}
+
+.empresa_2_2{
+    grid-area: empresa_2_2;
+}
+
+.empresa_2_img2{
+    grid-area: img2;
+}
+
+.empresa_2_p2{
+    grid-area: p2;
+}
+
+/*-------------------------------BLOG-------------------------------*/
+
+.blog{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "titulo"
+    "caja1"
+    "caja2"
+    "caja3"
+    ;
+    margin-top: 5%;
+}
+
+.blog_titulo{
+    grid-area: titulo;
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.blog_caja1{
+    position: relative;
+    grid-area: caja1;
+    margin-bottom: 3%;
+}
+
+.blog_caja1_rebajas{
+    position: absolute;
+    width: 35%;
+    top: 63%;
+    left: 32%;
+}
+
+.blog_caja2{
+    grid-area: caja2;
+    margin-bottom: 3%;
+}
+
+.blog_caja3{
+    grid-area: caja3;
+}
+
+.blog_caja1, .blog_caja2, .blog_caja3{
+    text-align: center;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3%;
+}
+
+/*-------------------------------FOOTER-------------------------------*/
+
+.footer{
+    margin-top: 5%;
+}
+
+.footer__pelotas{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "img1"
+    "img2"
+    "img3"
+    ;
+    /*  margin: auto; */
+    margin-bottom: 5%;
+}
+
+.footer__pelota1{
+    grid-area: img1;
+}
+
+.footer__pelota2{
+    grid-area: img2;
+}
+
+.footer__pelota3{
+    grid-area: img3;
+}
+
+.footer__pelota1, .footer__pelota2, .footer__pelota3{
+    text-align: center;
+}
+
+.footer__pelota1 img, .footer__pelota2 img, .footer__pelota3 img{
+    width: 20%;
+}
+
+.footer__abajo{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "footer1"
+    "footer2"
+    "footer3"
+    ;
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+.footer__abajo__1{
+    grid-area: footer1;    
+    margin-top: 3%;
+}
+
+.footer__abajo__2{
+    grid: footer2;
+}
+
+.footer__abajo__3{
+    grid-area: footer3;
+}
+
+/*----------------------------------------------------------------------------------------*/
+
+@media (min-width: 576px) {
+
+    .footer__pelota1 img, .footer__pelota2 img, .footer__pelota3 img{
+        width: 10%;
+    }
+
+    .blog_caja1_rebajas{
+        width: 35%;
+        top: 63%;
+        left: 32%;
+    }
+
+}
+
+
+@media (min-width: 768px) {
+    
+    .banner{
+        position: relative;
+    }
+    
+    .banner__descripcion{
+        display: block;
+        width: 50%;
+        top: 25%;
+        left: 25%;
+        position: absolute;
+        color: var(--principal-blanco);
+        text-align: center;
+    }
+
+    .banner__titular{
+        text-align: left;
+    }
+
+    .banner__btn{
+        background-color: var(--principal-negro);
+        color: inherit;
+        padding: var(--relleno-enlaces);
+        display: inline-block;
+        margin: var(--relleno-enlaces);
+    }
+
+    .banner__fondo{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.538);        
+    }
+
+    /*-------------------------------SERVICIOS-------------------------------*/
+
+    .servicios__titulo{
+        margin-top: 2%;
+    }
+
+    
+
+}
+
+
+@media (min-width: 992px) {
+
+    body{
+        width: 90%;
+        margin: auto;
+    }
+
+    .header{
+        grid-template-columns: 1fr 3fr 0.5fr;
+        grid-template-areas: 
+        "logo nav cesta"
+        ;
+        justify-items: center;
+    }
+
+    .nav__link{
+        display: inline-block;
+        
+    }
+
+    /*-------------------------------SERVICIOS-------------------------------*/
+
+    .servicios{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "servicios servicios" 
+        "caja1 caja2"
+        "caja3 caja4"
+        ;
+        margin-top: 3%;
+        justify-content: space-around;
+    }
+
+    .servicios__caja1{
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 65%;
+        overflow: hidden;
+    }
+
+    .servicios__caja1p{
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.629);
+        color: var(--principal-blanco);
+        /*display: flex;
+        justify-content: center;
+        align-items: center;*/
+        text-align: center;
+        /* padding: 2%; */
+        width: 90%;
+        height: 60%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        overflow: hidden;
+    }
+
+    .servicios__caja1p:hover{
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .servicios__caja1__a{
+        margin-top: 3%;
+    }
+
+    .servicios__caja3{
+        position: relative;
+        top: 0;
+        left:0;
+        width: 100%;
+        height: 65%;
+        overflow: hidden;
+    }
+
+    .servicios__caja3p{
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.629);
+        color: var(--principal-blanco);
+        /*display: flex;
+        justify-content: center;
+        align-items: center;*/
+        text-align: center;
+        /* padding: 2%; */
+        width: 90%;
+        height: 52%;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    .servicios__caja3p:hover{
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .servicios__caja3__a{
+        margin-top: 6%;
+      
+    }
+
+    .servicios__caja1, .servicios__caja2, .servicios__caja3, .servicios__caja4{
+        border: 2px solid var(--principal-negro);
+        width: 90%;
+        margin: auto;
+        box-shadow: 10px 5px 9px rgb(169, 160, 160);
+    }
+
+    .servicios__caja3, .servicios__caja4{
+        margin-top: 5%;
+    }
+
+    .servicios__caja1__a, .servicios__caja2__a, .servicios__caja3__a, .servicios__caja4__a{
+        width: 22%;
+    }
+
+    .servicios__titulo{
+        margin-top: 0%;
+        margin-bottom: 2%;
+    }
+
+    /*-------------------------------EMPRESA-------------------------------*/
+
+    .empresa{
+        margin-top: 5%;
+    }
+
+    /*-------------------------------BLOG-------------------------------*/
+
+    .blog{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "titulo titulo titulo"
+        "caja1 caja2 caja3"
+        ;
+        gap: 1%;
+    }
+
+    .blog_caja1, .blog_caja2, .blog_caja3{
+        text-align: center;
+    }
+
+    .blog_caja1 p, .blog_caja2 p, .blog_caja3 p{
+        text-align: left;
+    }
+
+    /*-------------------------------FOOTER-------------------------------*/
+
+    .footer__pelotas{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "img1 img2 img3"
+        ;
+    }
+
+    .footer__pelota1{
+        text-align: end;
+    }
+
+    .footer__pelota3{
+        text-align: start;
+    }
+
+    .footer__pelota1 img, .footer__pelota2 img, .footer__pelota3 img{
+        width: 25%;
+    }
+
+    .footer__abajo{
+        margin-top: 3%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "footer1 footer2 footer3"
+        ;
+        width: 100%;
+    }    
+
+}
+
+
+@media (min-width: 1200px) {
+
+    body{
+        width: 90%;
+    }
+
+    .empresa_2{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "img1 p1"
+        "img2 p2"
+        ;
+        text-align: left;
+        align-items: center;
+        justify-items: center;
+        margin-top: 0;
+    }
+
+    .empresa{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "titulo titulo"
+        "empresa_1 empresa_2"
+        ;
+        gap: 0%;
+    }
+
+    .empresa_2_img1{
+        margin-bottom: 5%;
+    }
+
+    .empresa_2_p1{
+        margin-left: 5%;
+    }
+
+    .empresa_2_p2{
+        margin-left: 5%;
+    }
+
+    .servicios__caja1__a{
+        margin-top: 4%;
+        margin-bottom: 22%;
+    }
+
+    .servicios__caja3__a{
+        /* margin-top: 10%; */
+        margin-bottom: 23%;
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+
+    /*-------------------------------SERVICIOS-------------------------------*/
+
+    .servicios{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "servicios servicios servicios servicios"
+        "caja1 caja2 caja3 caja4"
+        ;
+    }
+
+    .servicios__caja1__a, .servicios__caja2__a, .servicios__caja3__a, .servicios__caja4__a{
+        width: 30%;
+    }
+
+    .servicios__caja3, .servicios__caja4{
+        margin-top: 0%;
+    }
+
+    .servicios__caja3{
+        margin-block: auto;
+    }
+
+    .servicios__caja3p{
+        height: 70%;
+    }
+
+    .servicios__caja1__a{
+        margin-top: 9%;
+    }
+
+    .servicios__caja3__a{
+        margin-top: 10%;
+    }
+
+    .blog_caja1_rebajas{
+        width: 15%;
+        top: 375%;
+        left: 12.2%;
+    }
+
+}
